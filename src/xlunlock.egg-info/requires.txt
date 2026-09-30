@@ -1,0 +1,5 @@
+msoffcrypto-tool>=5.0
+olefile>=0.47
+
+[dev]
+pytest>=7

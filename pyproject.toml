@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "xlunlock"
+version = "0.1.0"
+description = "Strip open-passwords, sheet/workbook protection, and VBA locks from Excel files, in place, without touching content."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+authors = [{ name = "y.ramadan" }]
+keywords = ["excel", "xls", "xlsx", "xlsm", "xlsb", "unlock", "unprotect", "password"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Office/Business",
+]
+dependencies = [
+    "msoffcrypto-tool>=5.0",
+    "olefile>=0.47",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+xlunlock = "xlunlock.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/your-user/xlunlock"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
